@@ -125,7 +125,7 @@ function PlantChecklist({
       : `${selectedPlantIds.length} Plant`;
 
   return (
-    <details className="group relative min-w-56">
+    <details className="group isolate relative min-w-56">
       <summary className="flex h-10 cursor-pointer list-none items-center justify-between rounded-lg border border-white/10 bg-primary-container px-3 text-sm font-bold text-white outline-none transition-colors hover:border-accent-blue">
         <span>{selectedLabel}</span>
         <ChevronRight
@@ -133,7 +133,7 @@ function PlantChecklist({
           aria-hidden
         />
       </summary>
-      <div className="absolute left-0 top-12 z-30 w-72 rounded-xl border border-white/10 bg-surface-container p-3 shadow-2xl">
+      <div style={{zIndex: 50}} className="absolute left-0 top-12 w-72 rounded-xl border border-white/10 bg-surface-container p-3 shadow-2xl">
         <div className="mb-2 text-[10px] font-bold uppercase tracking-[0.24em] text-on-surface-variant">
           Checklist Plant
         </div>
@@ -187,7 +187,7 @@ function DashboardHeader({
   onPlantToggle: (plantId: string) => void;
 }) {
   return (
-    <nav className="flex flex-col gap-5 border-b border-white/5 bg-surface/50 px-5 py-5 shadow-md backdrop-blur-md lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-6">
+    <nav style={{zIndex: 40}} className="isolate flex flex-col gap-5 border-b border-white/5 bg-surface/50 px-5 py-5 shadow-md backdrop-blur-md lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-6">
       <div className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-8">
         <div className="flex min-w-64 flex-col">
           <h1 className="flex items-center gap-2 text-3xl font-black uppercase tracking-tight text-white lg:text-4xl">
@@ -227,7 +227,7 @@ function DashboardHeader({
           </div>
         </div>
 
-        <div className="flex w-full max-w-md items-center rounded-lg border border-white/10 bg-white/5 p-1 sm:w-auto">
+        <div className="flex w-full max-w-md items-center rounded-lg border border-white/10 bg-white/5 p-1 sm:w-auto mt-5">
           <ModeButton
             active={mode === "comparison"}
             onClick={() => onModeChange("comparison")}
