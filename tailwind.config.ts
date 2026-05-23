@@ -1,0 +1,98 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  darkMode: "class",
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        "surface-variant": "#e0e3e5",
+        "primary-fixed-dim": "#bcc7de",
+        "on-primary-fixed-variant": "#3c475a",
+        secondary: "#0058be",
+        "on-error-container": "#93000a",
+        "tertiary-fixed": "#d3e4fe",
+        tertiary: "#041528",
+        "on-surface-variant": "#94a3b8",
+        "on-secondary-fixed-variant": "#004395",
+        "surface-bright": "#f7f9fb",
+        background: "#020617",
+        "on-secondary-container": "#fefcff",
+        "on-primary-container": "#8590a6",
+        outline: "#75777d",
+        "surface-container-lowest": "#ffffff",
+        surface: "#020617",
+        "surface-dim": "#d8dadc",
+        "secondary-container": "#2170e4",
+        "on-tertiary-fixed": "#0b1c30",
+        "on-error": "#ffffff",
+        "outline-variant": "#c5c6cd",
+        error: "#ef4444",
+        "surface-container-low": "#1e293b",
+        "primary-container": "#1e293b",
+        "on-primary": "#ffffff",
+        "surface-container-highest": "#e0e3e5",
+        "surface-tint": "#545f73",
+        "surface-container": "#0f172a",
+        "on-background": "#f8fafc",
+        "on-secondary": "#ffffff",
+        "on-tertiary-fixed-variant": "#38485d",
+        "inverse-primary": "#bcc7de",
+        "tertiary-container": "#1a2a3e",
+        "secondary-fixed-dim": "#adc6ff",
+        "secondary-fixed": "#d8e2ff",
+        "primary-fixed": "#d8e3fb",
+        primary: "#091426",
+        "accent-blue": "#3b82f6",
+        success: "#10b981",
+        warning: "#f59e0b",
+      },
+      borderRadius: {
+        DEFAULT: "0.125rem",
+        lg: "0.25rem",
+        xl: "0.5rem",
+        full: "0.75rem",
+      },
+      spacing: {
+        "stack-xs": "0.25rem",
+        gutter: "1.5rem",
+        "stack-lg": "1.5rem",
+        "margin-desktop": "2rem",
+        "stack-sm": "0.5rem",
+        "stack-md": "1rem",
+        "margin-mobile": "1rem",
+        "container-max": "1920px",
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+      },
+      keyframes: {
+        ticker: {
+          "0%": { transform: "translate3d(0, 0, 0)" },
+          "100%": { transform: "translate3d(-100%, 0, 0)" },
+        },
+        "pulse-ring": {
+          "0%": { transform: "scale(.33)" },
+          "80%, 100%": { opacity: "0" },
+        },
+        "pulse-dot": {
+          "0%": { transform: "scale(.8)" },
+          "50%": { transform: "scale(1)" },
+          "100%": { transform: "scale(.8)" },
+        },
+      },
+      animation: {
+        ticker: "ticker 60s linear infinite",
+        "pulse-ring": "pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite",
+        "pulse-dot": "pulse-dot 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite",
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;
