@@ -244,6 +244,20 @@ function DashboardHeader({
       </div>
 
       <div className="flex flex-wrap items-center gap-5 lg:justify-end xl:gap-8">
+        <div className="flex rounded-lg border border-white/10 bg-white/5 p-1 text-[11px] font-black uppercase tracking-wider">
+          <Link
+            className="rounded bg-accent-blue px-3 py-2 text-white"
+            href="/dashboard-1"
+          >
+            Dashboard 1
+          </Link>
+          <Link
+            className="rounded px-3 py-2 text-on-surface-variant transition-colors hover:text-white"
+            href="/dashboard-2"
+          >
+            Dashboard 2
+          </Link>
+        </div>
         <div className="flex items-center gap-5 text-white/40">
           <LayoutDashboard className="h-7 w-7 fill-current" aria-hidden />
           <BarChart3 className="h-7 w-7" aria-hidden />

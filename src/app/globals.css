@@ -53,6 +53,41 @@ body {
   }
 }
 
+@keyframes critical-pulse {
+  0%,
+  100% {
+    background-color: rgba(255, 180, 171, 0.08);
+    border-color: rgba(255, 180, 171, 0.2);
+  }
+
+  50% {
+    background-color: rgba(255, 180, 171, 0.18);
+    border-color: rgba(255, 180, 171, 0.55);
+  }
+}
+
+@keyframes pending-orders-scroll {
+  0% {
+    transform: translateY(0);
+  }
+
+  45% {
+    transform: translateY(-50%);
+  }
+
+  50% {
+    transform: translateY(-50%);
+  }
+
+  95% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @layer components {
   .glass-card {
     background: rgba(15, 23, 42, 0.46);
@@ -81,6 +116,14 @@ body {
 
   .chart-glow {
     filter: drop-shadow(0 0 8px rgba(33, 112, 228, 0.42));
+  }
+
+  .pending-orders-marquee {
+    animation: pending-orders-scroll 10s ease-in-out infinite;
+  }
+
+  .pending-orders-marquee:hover {
+    animation-play-state: paused;
   }
 
   .pulse-circle {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { dashboardIcons, plants } from "@/lib/dashboard-data";
 import { dashboardModules, getDashboardModule } from "@/lib/dashboard-modules";
@@ -12,9 +12,15 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return dashboardModules.map((module) => ({
-    module: module.slug,
-  }));
+  return [
+    ...dashboardModules.map((module) => ({
+      module: module.slug,
+    })),
+    { module: "1" },
+    { module: "2" },
+    { module: "dashboard-1" },
+    { module: "dashboard-2" },
+  ];
 }
 
 function getPlantMetric(plant: Plant, slug: DashboardModuleSlug) {
@@ -59,6 +65,15 @@ function getPlantMetric(plant: Plant, slug: DashboardModuleSlug) {
 
 export default async function ModuleDetailPage({ params }: PageProps) {
   const { module: moduleSlug } = await params;
+
+  if (moduleSlug === "1" || moduleSlug === "dashboard-1") {
+    redirect("/dashboard-1");
+  }
+
+  if (moduleSlug === "2" || moduleSlug === "dashboard-2") {
+    redirect("/dashboard-2");
+  }
+
   const dashboardModule = getDashboardModule(moduleSlug);
 
   if (!dashboardModule) {
